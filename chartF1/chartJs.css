@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+}
+
+.fundo{
+    background-image: url(https://www.mktesportivo.com/wp-content/uploads/2021/03/f1.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+}
+
+.container2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.title{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+
+.logoF1{
+    height: 40px;
+    width: 100PX;
+}
+
+.container3{
+    height: 500px;
+    width: 90%;
+}
+
+.Mercedes{
+    background-color: rgba(245, 245, 220, 0.815);
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 410px;
+    width: 700px;
+}
+
+.logo{
+    width: 100px;
+}
+
+.McLaren{
+    background-color: rgba(245, 245, 220, 0.815);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 700px;
+}
+
+.Ferrari{
+    background-color: rgba(245, 245, 220, 0.815);
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 700px;
+}
+
+.RedBull{
+    background-color: rgba(245, 245, 220, 0.815);
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 700px;
+}

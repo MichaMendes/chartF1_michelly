@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curva setor 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="chartJs.css" />
+</head>
+
+<body class="fundo">
+    <div class="container1">
+        <h1 class="title">Comparação de desempenho na curva do setor 5</h1>
+        <img class="logoF1" src="https://logodownload.org/wp-content/uploads/2016/11/formula-1-logo-5-3.png" alt="">
+    </div>
+
+    <div class="container3">
+        <div class="container2">
+            <div class="Mercedes">
+                <img class="logo" src="https://assets.stickpng.com/images/620132e64babde0004ca417e.png" alt=""> <br>
+                <canvas id="myChartMercedes"></canvas>
+            </div>
+    
+            <div class="McLaren"><br>
+                <img class="logo" src="https://logodownload.org/wp-content/uploads/2022/02/mclaren-logo-1.png" alt=""><br>
+                <br><br>
+                <canvas id="myChartMcLaren"></canvas>
+            </div>
+        </div>
+    
+        <div class="container2">
+            <div class="Ferrari">
+                <img style="height: 60px;"
+                    src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/fb/Logotipo_da_Scuderia_Ferrari.svg/1200px-Logotipo_da_Scuderia_Ferrari.svg.png"
+                    alt=""> <br><br>
+                <canvas id="myChartFerrari"></canvas>
+            </div><br><br>
+    
+            <div class="RedBull">
+                <br><img class="logo" src="https://liquipedia.net/commons/images/d/d8/Red_Bull_Racing_allmode.png" alt=""><br> <br> <br>
+                <canvas id="myChartRedBull"></canvas>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+<script>
+    const labels = [
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'curva',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+        'reta',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Hamilton',
+            backgroundColor: 'rgb(54,54,54)',
+            borderColor: 'rgb(54,54,54)',
+            data: [330, 330, 330, 330, 330, 330, 330, 330, 290, 250, 240, 200, 180, 180, 180, 180, 180, 220, 250, 290, 300, 300, 300, 320, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350],
+        },
+
+        {
+            label: 'Russel',
+            backgroundColor: 'rgb(105,105,105)',
+            borderColor: 'rgb(105,105,105)',
+            data: [325, 325, 325, 328, 328, 328, 327, 327, 295, 245, 245, 205, 185, 185, 185, 185, 180, 215, 245, 285, 305, 305, 305, 300, 345, 345, 345, 345, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349],
+        }
+        ]
+    };
+
+    const data2 = {
+        labels: labels,
+        datasets: [{
+            label: 'Norris',
+            backgroundColor: 'rgb(255,140,0)',
+            borderColor: 'rgb(255,140,0)',
+            data: [340, 340, 340, 340, 340, 340, 330, 330, 290, 250, 240, 200, 160, 160, 160, 160, 160, 220, 250, 290, 300, 300, 300, 320, 330, 330, 330, 330, 330, 330, 330, 340, 340, 340, 340, 340, 340, 340, 350, 350, 350, 350, 350, 350, 350],
+        },
+
+        {
+            label: 'Piastri',
+            backgroundColor: 'rgb(255,165,0)',
+            borderColor: 'rgb(255,165,0)',
+            data: [325, 325, 325, 328, 328, 328, 327, 327, 295, 245, 245, 205, 185, 185, 185, 185, 180, 215, 245, 285, 305, 305, 305, 300, 345, 345, 345, 345, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349, 349],
+        }
+        ]
+    };
+
+    const data3 = {
+        labels: labels,
+        datasets: [{
+            label: 'Sainz',
+            backgroundColor: 'rgb(255,0,0)',
+            borderColor: 'rgb(255,0,0)',
+            data: [350, 350, 350, 330, 330, 330, 330, 330, 290, 250, 240, 200, 180, 180, 180, 180, 180, 220, 250, 290, 300, 300, 300, 320, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 329, 340, 340, 340, 350, 350],
+        },
+
+        {
+            label: 'LeClerc',
+            backgroundColor: 'rgb(255,69,0)',
+            borderColor: 'rgb(255,69,0)',
+            data: [325, 325, 325, 328, 328, 328, 327, 327, 295, 245, 245, 205, 170, 170, 170, 170, 180, 215, 245, 285, 305, 305, 305, 300, 330, 330, 330, 330, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 349, 349, 349, 349, 349],
+        }
+        ]
+    };
+
+    const data4 = {
+        labels: labels,
+        datasets: [{
+            label: 'Verstappen',
+            backgroundColor: 'rgb(25,25,112)',
+            borderColor: 'rgb(25,25,112)',
+            data: [345, 345, 345, 345, 345, 345, 345, 345, 290, 250, 240, 200, 200, 200, 200, 200, 200, 220, 250, 290, 300, 300, 300, 320, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350],
+        },
+
+        {
+            label: 'Perez',
+            backgroundColor: 'rgb(72,61,139)',
+            borderColor: 'rgb(72,61,139)',
+            data: [325, 325, 325, 328, 328, 328, 327, 327, 295, 245, 245, 205, 185, 185, 185, 185, 180, 215, 245, 285, 305, 305, 305, 300, 345, 345, 345, 345, 330, 330, 330, 330, 330, 330, 330, 330, 330, 349, 349, 349, 349, 349, 349, 349, 349],
+        }
+        ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {}
+    };
+
+    const config3 = {
+        type: 'line',
+        data: data3,
+        options: {}
+    };
+
+    const config4 = {
+        type: 'line',
+        data: data4,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChartMercedes = new Chart(
+        document.getElementById('myChartMercedes'),
+        config
+    );
+
+    const myChartMcLaren = new Chart(
+        document.getElementById('myChartMcLaren'),
+        config2
+    );
+
+    const myChartFerrari = new Chart(
+        document.getElementById('myChartFerrari'),
+        config3
+    );
+
+    const myChartRedBull = new Chart(
+        document.getElementById('myChartRedBull'),
+        config4
+    );
+</script>
+
+</html>
